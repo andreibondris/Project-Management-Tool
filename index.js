@@ -34,7 +34,7 @@ var issues = [
 }];
 
 var Project = { 'id': 1,
-        'name': 'Web App'    
+        'name': 'Web App'
 };
 
 var sprints = { 'id': 1,
@@ -45,6 +45,7 @@ var createIssueButton = document.querySelector('.create-issue');
 var submitButton = document.querySelector('.submit-button');
 var issueForm = document.querySelector('.issue-form');
 var saveButton = document.querySelector('.userName');
+var showIssuesButton = document.querySelector('.show-issues');
 
 createIssueButton.addEventListener("click", function() {
         document.querySelector(".issue-form").style.display = 'block';
@@ -78,8 +79,7 @@ submitButton.addEventListener("click", function(e) {
         console.log(issues);
 
         document.querySelector(".issue-form").style.display = 'none';
-        document.write(issues);
-
+       // document.write(issues);
 })
 
 saveButton.addEventListener('click', function() {
@@ -87,7 +87,22 @@ saveButton.addEventListener('click', function() {
         var createdUser = createUser(userName);
         users.push(createdUser);
         console.log(users);
+})
 
+showIssuesButton.addEventListener('click', function() {
+        var content;
+        issues.forEach(element => {
+                content = '<h4 class = "name">Issue\'s name: ' + element.name + '</h4>\
+                           <p class = "type">Issue\'s type: ' + element.type + '</p>\
+                           <p class = "sprint">Belongs to ' + element.sprint + ' sprint</p>\
+                           <p class = "createdBy">Created by ' + element.createdBy + '</p>\
+                           <p class = "createdAt">Created at ' + element.createdAt + '</p>\
+                           <p class = "status">Status: ' + element.status + '</p>\
+                           <p class = "descr">Description: ' + element.description + '</p>\
+                           <p class = "task">Tasks: ' + element.tasks + '</p>';
+                var contentHTML = document.createRange().createContextualFragment(content);
+                document.querySelector('.all-issues').appendChild(contentHTML);
+        })
 })
 
 var createUser = function(userName) {
@@ -107,7 +122,7 @@ var createIssue = function(type, name, sprint, asignedTo, descr, status, task) {
         issue.asignedTo = asignedTo;
         issue.description = descr;
         issue.status = status;
-        issue.task = task;
+        issue.tasks = task;
         issue.comments = '';
         issue.updatedAt = new Date().getDate() + '/' + new Date().getMonth() + 1 + '/' + new Date().getFullYear();
         issue.createdAt = new Date().getDate() + '/' + new Date().getMonth() + 1 + '/' + new Date().getFullYear();

@@ -1,3 +1,11 @@
 .issue-form {
-    display: none;
+    display: none; 
+    border: 1px solid black;
+    width: 50%;
+    padding-left: 50px;
+    margin-top: 20px;
+}
+
+.submit-button {
+    margin-top: 10px;
 }

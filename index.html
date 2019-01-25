@@ -7,35 +7,38 @@
 <body>
 
 <h1>Project Management Tool</h1>
-<p class="">Please write your name here:</p><br>
+<p class="">Please write your name here:</p>
 <input type="text" name="user">
 <input type="submit" value="Save" class="userName">
 
 <p>Create new issue: </p>
 <button type="button" class="create-issue">Create Issue</button>
 
+<button type="button" class="show-issues">Show all issues</button>
+<div class="all-issues"></div>
+
 <div class="issue-form">
     <form>
-        Select type <br><input class="feature" type="radio" value="feature" name="type">Feature<br>
+        <h4>Select type</h4> <input class="feature" type="radio" value="feature" name="type">Feature<br>
                 <input class="bug" type="radio" value="bug" name="type">Bug<br>
                 <input class="task" type="radio" value="task" name="type">Task<br>
-        Name <input type="text" value="" name="name" required><br><br>
-        Choose sprint <br><input type="radio" value="auth" name="sprint">Authentication<br>
+        <h4>Name</h4> <input type="text" value="" name="name" required><br><br>
+        <h4>Choose sprint</h4> <input type="radio" value="auth" name="sprint">Authentication<br>
                   <input type="radio" value="dashboard" name="sprint">Dashboard<br>
                   <input type="radio" value="profile" name="sprint">Profile<br>
-       <!-- Created by: <div class="createdBy"></div><br> -->
-        Asign to:  <select class="users"></select><br>
-        Description: <textarea class="descr" required></textarea><br>
-        Status: <br><input type="radio" value="new" checked name="status">New<br>
+        <h4>Asign to:</h4>  <select class="users"></select><br>
+        <h4>Description:</h4> <textarea class="descr" required></textarea><br>
+        <h4>Status:</h4> <input type="radio" value="new" checked name="status">New<br>
             <input type="radio" value="in progress" name="status">In Progress<br>
             <input type="radio" value="Feedback" name="status">Feedback<br>
             <input type="radio" value="rework" name="status">Rework<br>
             <input type="radio" value="resolved" name="status">Resolved<br>
             <input type="radio" value="test" name="status">Ready for Testing<br><br>
-        Insert Tasks: <input type="text" value="task1" name="task"><br>
+        <h4>Insert Tasks:</h4> <input type="text" name="task"><br>
         <input type="submit" value="Submit" class="submit-button">
     </form>
 </div>
+
 
 <script src="index.js"></script>
 </body>
